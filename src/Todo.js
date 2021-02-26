@@ -4,7 +4,9 @@ function Todo(props) {
 
     return (
         <div>
-            {props.todo.title}
+            <ul>
+                <li>{props.todo.title}</li>
+            </ul>
         </div>
     );
 }

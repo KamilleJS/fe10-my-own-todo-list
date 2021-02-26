@@ -3,9 +3,11 @@ import Todo from "./Todo";
 
 function List(props) {
 
+    const {list} = props;
+
     return (
         <div>
-            {props.list.map(el =>
+            {list.map(el =>
                 <Todo todo={el}/>
             )}
         </div>
