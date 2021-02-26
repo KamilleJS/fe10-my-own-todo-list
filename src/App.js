@@ -1,4 +1,6 @@
-
+import './App.css'
+import {useState} from "react";
+import List from "./List";
 
 function App() {
     const initialList = [
@@ -7,11 +9,14 @@ function App() {
         {id: 3, title: 'find job', status: 'undone'}
     ]
 
-  return (
-    <div className="App">
-      <h2>Todo list</h2>
-    </div>
-  );
+    const [list, setList] = useState(initialList);
+
+    return (
+        <div>
+            <h2>Todo list</h2>
+            <List list={list}/>
+        </div>
+    );
 }
 
 export default App;
