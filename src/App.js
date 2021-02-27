@@ -5,9 +5,9 @@ import List from "./List";
 
 function App() {
     const initialList = [
-        {id: 1, title: 'Learn JS', status: 'undone'},
-        {id: 2, title: 'Learn React', status: 'undone'},
-        {id: 3, title: 'Find job', status: 'undone'}
+        {id: 1, title: 'Learn JS', done: false},
+        {id: 2, title: 'Learn React', done: false},
+        {id: 3, title: 'Find job', done: false}
     ]
 
     const [list, setList] = useState(initialList);
@@ -17,7 +17,7 @@ function App() {
         const newTodo = {
             id: Math.random(),
             title: inputValue,
-            status: 'undone'
+            done: false
         }
         const newList = [...list, newTodo];
         setList(newList);
