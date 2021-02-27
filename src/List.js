@@ -8,7 +8,11 @@ function List(props) {
     return (
         <div>
             {list.map(el =>
-                <Todo key={el.id} todo={el} deleteTodo={props.deleteTodo}/>
+                <Todo key={el.id}
+                      todo={el}
+                      deleteTodo={props.deleteTodo}
+                      updateTodo={props.updateTodo}
+                />
             )}
         </div>
     );

@@ -33,12 +33,20 @@ function App() {
         setInputValue(e.target.value);
     }
 
+    const updateTodo = (todoId) => {
+        const newList = list.map(el => {
+            if(el.id === todoId) return {...el, done: !el.done}
+            return el;
+        })
+        setList(newList);
+    }
+
     return (
         <div>
             <h2>Todo list</h2>
             <input onChange={inputChange} value={inputValue} type="text"/>
             <button onClick={addTodo} type="button" className="btn btn-secondary btn-sm">Add todo</button>
-            <List list={list} deleteTodo={deleteTodo}/>
+            <List list={list} deleteTodo={deleteTodo} updateTodo={updateTodo}/>
         </div>
     );
 }
