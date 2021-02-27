@@ -11,15 +11,17 @@ function App() {
     ]
 
     const [list, setList] = useState(initialList);
+    const [inputValue, setInputValue] = useState('');
 
     const addTodo = () => {
         const newTodo = {
             id: Math.random(),
-            title: 'New title',
+            title: inputValue,
             status: 'undone'
         }
         const newList = [...list, newTodo];
         setList(newList);
+        setInputValue('');
     }
 
     const deleteTodo = (todoId) => {
@@ -27,10 +29,14 @@ function App() {
         setList(newList);
     }
 
+    const inputChange = (e) => {
+        setInputValue(e.target.value);
+    }
+
     return (
         <div>
             <h2>Todo list</h2>
-            <input type="text"/>
+            <input onChange={inputChange} value={inputValue} type="text"/>
             <button onClick={addTodo} type="button" className="btn btn-secondary btn-sm">Add todo</button>
             <List list={list} deleteTodo={deleteTodo}/>
         </div>
