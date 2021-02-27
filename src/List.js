@@ -3,12 +3,12 @@ import Todo from "./Todo";
 
 function List(props) {
 
-    const {list} = props;
+    const {list = []} = props;
 
     return (
         <div>
             {list.map(el =>
-                <Todo todo={el}/>
+                <Todo key={el.id} todo={el} deleteTodo={props.deleteTodo}/>
             )}
         </div>
     );
