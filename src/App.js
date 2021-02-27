@@ -30,6 +30,7 @@ function App() {
     return (
         <div>
             <h2>Todo list</h2>
+            <input type="text"/>
             <button onClick={addTodo} type="button" className="btn btn-secondary btn-sm">Add todo</button>
             <List list={list} deleteTodo={deleteTodo}/>
         </div>
