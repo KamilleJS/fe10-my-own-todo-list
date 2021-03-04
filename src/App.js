@@ -35,7 +35,7 @@ function App() {
 
     const updateTodo = (todoId) => {
         const newList = list.map(el => {
-            if(el.id === todoId) return {...el, done: !el.done}
+            if (el.id === todoId) return {...el, done: !el.done}
             return el;
         })
         setList(newList);
