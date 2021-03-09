@@ -9,7 +9,6 @@ function Todo(props) {
 
     const {todo = {}} = props;
     const {done} = todo;
-
     const isDone = done ? style : {};
 
     return (
