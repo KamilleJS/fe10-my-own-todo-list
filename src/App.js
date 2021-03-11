@@ -9,7 +9,6 @@ function App() {
         {id: 2, title: 'Learn React', done: false},
         {id: 3, title: 'Find job', done: false}
     ]
-
     const [list, setList] = useState(initialList);
     const [inputValue, setInputValue] = useState('');
 
